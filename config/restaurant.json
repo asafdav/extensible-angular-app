@@ -1,0 +1,7 @@
+{
+  "FEATURES": {
+    "application": "RESTAURANT",
+    "title": "Rest App"
+  },
+  "SERVER_URL": "/restaurant-app"
+}

@@ -2,16 +2,12 @@
 
 /**
  * @ngdoc function
- * @name extensibleAngularAppApp.controller:MainCtrl
+ * @name extApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the extensibleAngularAppApp
+ * Controller of the extApp
  */
-angular.module('extensibleAngularAppApp')
+angular.module('extApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.mainObjects = {};
   });

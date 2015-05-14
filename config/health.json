@@ -1,0 +1,7 @@
+{
+  "FEATURES": {
+    "application": "HEALTH",
+    "title": "Health App"
+  },
+  "SERVER_URL": "/health-app"
+}

@@ -114,6 +114,20 @@ module.exports = function (grunt) {
       }
     },
 
+// Generate constants
+    ngconstant: {
+      options: {
+        name: 'extApp.constants',
+        dest: '<%= yeoman.app %>/scripts/config.js'
+      },
+      health: {
+        constants: './config/health.json'
+      },
+      restaurant: {
+        constants: './config/restaurant.json'
+      }
+    },
+
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
@@ -428,8 +442,11 @@ module.exports = function (grunt) {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
 
+    if (!target) target = 'health';
+
     grunt.task.run([
       'clean:server',
+      'ngconstant:' + target,
       'wiredep',
       'concurrent:server',
       'autoprefixer:server',
