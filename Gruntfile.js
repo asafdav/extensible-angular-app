@@ -451,10 +451,10 @@ module.exports = function (grunt) {
         push: true,
         message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
       },
-      pages: {
+      health: {
         options: {
-          remote: 'git@github.com:asafdav/cb4-ui.git',
-          branch: 'gh-pages'
+          remote: 'git@heroku.com:ext-app-health.git',
+          branch: 'master'
         }
       }
     }
@@ -513,6 +513,15 @@ module.exports = function (grunt) {
       'filerev',
       'usemin',
       'htmlmin'
+    ]);
+  });
+
+  grunt.registerTask('deploy', 'Deploys the wanted app', function(target) {
+    if (!target) target = 'health';
+
+    grunt.task.run([
+      'build',
+      'buildcontrol:' + target
     ]);
   });
 
