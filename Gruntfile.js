@@ -45,7 +45,7 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= yeoman.app %>/styles/**.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
       gruntfile: {
@@ -233,6 +233,30 @@ module.exports = function (grunt) {
         relativeAssets: false,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
+      },
+      health: {
+        options: {
+          sassDir: '<%= yeoman.app %>/styles/health',
+          sourcemap: true
+        }
+      },
+      restaurant: {
+        options: {
+          sassDir: '<%= yeoman.app %>/styles/restaurant',
+          sourcemap: true
+        }
+      },
+      "health-dist": {
+        options: {
+          sassDir: '<%= yeoman.app %>/styles/health',
+          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+        }
+      },
+      "restaurant-dist": {
+        options: {
+          sassDir: '<%= yeoman.app %>/styles/restaurant',
+          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+        }
       },
       dist: {
         options: {
@@ -434,8 +458,24 @@ module.exports = function (grunt) {
       server: [
         'compass:server'
       ],
+      health: [
+        'compass:health'
+      ],
+      restaurant: [
+        'compass:restaurant'
+      ],
       test: [
         'compass'
+      ],
+      "health-dist": [
+        'compass:health-dist',
+        'imagemin',
+        'svgmin'
+      ],
+      "restaurant-dist": [
+        'compass:restaurant-dist',
+        'imagemin',
+        'svgmin'
       ],
       dist: [
         'compass:dist',
@@ -486,7 +526,7 @@ module.exports = function (grunt) {
       'clean:server',
       'ngconstant:' + target,
       'wiredep',
-      'concurrent:server',
+      'concurrent:' + target,
       'autoprefixer:server',
       'connect:livereload',
       'watch'
@@ -516,7 +556,7 @@ module.exports = function (grunt) {
       'ngconstant:' + target,
       'wiredep',
       'useminPrepare',
-      'concurrent:dist',
+      'concurrent:' + target + '-dist',
       'autoprefixer',
       'concat',
       'ngAnnotate',

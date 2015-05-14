@@ -1,0 +1,8 @@
+@import '../main';
+
+.jumbotron {
+  background-size: cover !important;
+  background:
+    linear-gradient(rgba(255,255,255,1),rgba(198,195,191,.45)),
+    url('/images/pestos-food-home.jpg');
+}
