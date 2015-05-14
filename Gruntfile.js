@@ -279,7 +279,7 @@ module.exports = function (grunt) {
 
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
+      html: ['<%= yeoman.dist %>/{,*/}{,*/}*.html'],
       css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
         assetsDirs: [
@@ -457,6 +457,12 @@ module.exports = function (grunt) {
           remote: 'git@heroku.com:ext-app-health.git',
           branch: 'master'
         }
+      },
+      restaurant: {
+        options: {
+          remote: 'git@heroku.com:ext-app-restaurant.git',
+          branch: 'master'
+        }
       }
     }
   });
@@ -521,7 +527,7 @@ module.exports = function (grunt) {
     if (!target) target = 'health';
 
     grunt.task.run([
-      //'build:' + target,
+      'build:' + target,
       'buildcontrol:' + target
     ]);
   });
