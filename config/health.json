@@ -1,7 +1,10 @@
 {
   "FEATURES": {
     "application": "HEALTH",
-    "title": "Health App"
+    "title": "Health App",
+    "results": {
+      "bookEnabled": true
+    }
   },
   "SERVER_URL": "/health-app"
 }

@@ -19,7 +19,8 @@ angular.module('healthApp', [])
       })
       .state('main.results', {
         url: "/results",
-        templateUrl: "views/results.html"
+        templateUrl: "views/results.html",
+        controller: 'health.ResultsCtrl'
       });
 
   });

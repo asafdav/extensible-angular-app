@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1>Welcome to {{$features.title}}</h1>
+  <h1>{{$features.title}}</h1>
   <p class="lead">
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     The best app in the world!
@@ -7,7 +7,7 @@
   <p>
   <form class="form-inline" role="search">
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search">
+      <input type="text" class="form-control" placeholder="Search" ng-model="mainObjects.q">
     </div>
     <select class="form-control"
             ng-model="mainObjects.category"

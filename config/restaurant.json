@@ -1,7 +1,10 @@
 {
   "FEATURES": {
     "application": "RESTAURANT",
-    "title": "Rest App"
+    "title": "Rest App",
+    "results": {
+      "bookEnabled": false
+    }
   },
   "SERVER_URL": "/restaurant-app"
 }

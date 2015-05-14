@@ -11,6 +11,7 @@
 angular
   .module('extApp', [
     'ui.router',
+    'ui.bootstrap',
     'extApp.constants',
     'restaurantApp',
     'healthApp'
@@ -22,6 +23,7 @@ angular
     $stateProvider
       .state('main', {
         abstract: true,
+        controller: 'MainCtrl',
         url: "",
         templateUrl: "views/layout.html"
       });

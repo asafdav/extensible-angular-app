@@ -1,1 +1,18 @@
-<h1>Search results:</h1>
+<h1>Search results: {{mainObjects.q}}</h1>
+
+<div class="media" ng-repeat="row in resultObjects.results">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" ng-src="{{row.logo}}" alt="..." style="height: 120px;">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">{{row.title}}</h4>
+    <p>{{row.description}}</p>
+    <button class="btn btn-sm btn-primary" ng-click="contact()">Contact</button>
+    <button class="btn btn-sm btn-default" ng-if="$features.results.bookEnabled">Book</button>
+    <br/><br/>
+  </div>
+</div>
+
+<br/><br/>

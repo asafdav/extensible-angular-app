@@ -13,7 +13,8 @@ angular.module('restaurantApp', [])
       })
       .state('main.results', {
         url: "/results",
-        templateUrl: "views/results.html"
+        templateUrl: "views/results.html",
+        controller: 'restaurant.ResultsCtrl'
       });
 
   });
