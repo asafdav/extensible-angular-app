@@ -408,6 +408,7 @@ module.exports = function (grunt) {
           cwd: '.',
           dest: '<%= yeoman.dist %>',
           src: [
+            'package.json',
             'Procfile',
             'web.js'
           ]
@@ -520,7 +521,7 @@ module.exports = function (grunt) {
     if (!target) target = 'health';
 
     grunt.task.run([
-      'build',
+      //'build:' + target,
       'buildcontrol:' + target
     ]);
   });
