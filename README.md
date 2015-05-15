@@ -10,3 +10,8 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+## Live example
+
+* [HealthApp](http://ext-app-health.herokuapp.com)
+* [RestaurantApp](http://ext-app-restaurant.herokuapp.com)
