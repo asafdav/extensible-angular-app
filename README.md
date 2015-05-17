@@ -2,6 +2,7 @@
 Extensible AngularJS Architecture.
 
 This project demonstrates the concepts I presented in my talk at the ng-conf Israel, May 17th, 2015.
+You can find the slides [here](https://goo.gl/5mQUmV).
 
 generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
